@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 import Cover from "../Shared/Cover/Cover";
-import PopularMenu from "../Home/PopularMenu/PopularMenu";
 
 const Menu = () => {
   return (
@@ -13,7 +12,7 @@ const Menu = () => {
         title={"OUR MENU"}
         description={"Would you like to try a dish?"}
       ></Cover>
-      <PopularMenu></PopularMenu>
+     
     </div>
   );
 };
