@@ -13,12 +13,15 @@ const AuthProviders = ({children}) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const loginWithForm = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     const signWithGoogle = () => {
+        setLoading(true)
         return signInWithPopup(auth,googleProvider)
     }
     const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
     useEffect( () => {
