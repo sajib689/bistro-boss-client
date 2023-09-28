@@ -13,6 +13,7 @@ import facebook from '../../assets/icon/facebook 1.png'
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProviders/AuthProviders";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
   const {loginWithForm} = useContext(AuthContext)
   useEffect(() => {
@@ -58,6 +59,9 @@ const Login = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Bistro Boss | Sign In</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col md:flex lg:flex-row">
           <div className="text-center md:w-1/2 lg:text-left">
