@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const nvOptions = 
+  const nvOptions = (
     <>
-     <li>
-                <Link to='/'>Home</Link>
-              </li>
-              <li>
-                <Link>Contact Us</Link>
-               
-              </li>
-              <li>
-                <Link>Dashboard</Link>
-              </li>
-              <li>
-                <Link to='/menu'>Our Menu</Link>
-              </li>
-              <li>
-                <Link to='/order'>Our Shop</Link>
-              </li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link>Contact Us</Link>
+      </li>
+      <li>
+        <Link>Dashboard</Link>
+      </li>
+      <li>
+        <Link to="/menu">Our Menu</Link>
+      </li>
+      <li>
+        <Link to="/order">Our Shop</Link>
+      </li>
+      <li>
+        <Link to="/login">Login</Link>
+      </li>
     </>
+  );
   return (
     <>
       <div className="max-w-screen-xl mx-auto navbar fixed z-10 bg-opacity-30 bg-black text-white">
@@ -45,15 +48,15 @@ const Navbar = () => {
               tabIndex={0}
               className="uppercase menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-             {nvOptions}
+              {nvOptions}
             </ul>
           </div>
-          <Link className="uppercase text-[28px] font-[900] text-[#FFF]">Bistro Boss</Link>
+          <Link className="uppercase text-[28px] font-[900] text-[#FFF]">
+            Bistro Boss
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 uppercase">
-          {nvOptions}
-          </ul>
+          <ul className="menu menu-horizontal px-1 uppercase">{nvOptions}</ul>
         </div>
         <div className="navbar-end">
           <Link className="btn">Button</Link>
