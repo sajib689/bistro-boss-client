@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-
 const FoodCard = ({item}) => {
     const {name, image, price, recipe} = item
+    
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -23,7 +23,9 @@ const FoodCard = ({item}) => {
           </div>
         </div>
       </div>
+      
     </div>
+    
   );
 };
 
