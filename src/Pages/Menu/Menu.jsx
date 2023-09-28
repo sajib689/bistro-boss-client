@@ -33,7 +33,7 @@ const Menu = () => {
           ))}
         </div>
         <div className="text-center mt-20">
-          <Link className="p-2 mb-24 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
+          <Link to={`/order`} className="p-2 mb-24 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
             ORDER YOUR FAVOURITE FOOD
           </Link>
         </div>
@@ -52,7 +52,7 @@ const Menu = () => {
           ))}
         </div>
         <div className="text-center mt-20">
-          <Link className="p-2 mb-24 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
+          <Link to={`/order`} className="p-2 mb-24 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
             ORDER YOUR FAVOURITE FOOD
           </Link>
         </div>
@@ -71,7 +71,7 @@ const Menu = () => {
           ))}
         </div>
         <div className="text-center mt-20">
-          <Link className="p-2 mb-24 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
+          <Link to={`/order`} className="p-2 mb-24 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
             ORDER YOUR FAVOURITE FOOD
           </Link>
         </div>
@@ -90,7 +90,7 @@ const Menu = () => {
           ))}
         </div>
         <div className="text-center mt-20">
-          <Link className="p-2 mb-24 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
+          <Link to={`/order`} className="p-2 mb-24 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
             ORDER YOUR FAVOURITE FOOD
           </Link>
         </div>
@@ -109,7 +109,7 @@ const Menu = () => {
           ))}
         </div>
         <div className="text-center mt-20 mb-24">
-          <Link className="p-2 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
+          <Link to={`/order`} className="p-2 font-[500] text-[17px] uppercase border-b-4 border-cyan-900 color-[#1F2937] rounded-lg">
             ORDER YOUR FAVOURITE FOOD
           </Link>
         </div>
