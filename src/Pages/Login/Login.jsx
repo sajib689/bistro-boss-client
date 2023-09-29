@@ -6,7 +6,7 @@ import {
  
   validateCaptcha,
 } from "react-simple-captcha";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from '../../assets/icon/google 1.png'
 import github from '../../assets/icon/github 1.png'
 import facebook from '../../assets/icon/facebook 1.png'
@@ -16,6 +16,9 @@ import { AuthContext } from "../../Providers/AuthProviders/AuthProviders";
 import { Helmet } from "react-helmet-async";
 const Login = () => {
   const {loginWithForm} = useContext(AuthContext)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/'
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
@@ -55,6 +58,7 @@ const Login = () => {
       text: `Invalid Captcha`
     })
   }
+  navigate(from, {replace: true})
   form.reset()
   };
   return (
