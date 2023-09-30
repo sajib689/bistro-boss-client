@@ -67,7 +67,7 @@ const Menu = () => {
       <div className="mt-24 mb-12">
         <div className="grid md:grid-cols-2 gap-10">
           {pizza.slice(0, 7).map((item) => (
-            <MenuItem key={item.name} item={item}></MenuItem>
+            <MenuItem key={item.id} item={item}></MenuItem>
           ))}
         </div>
         <div className="text-center mt-20">
