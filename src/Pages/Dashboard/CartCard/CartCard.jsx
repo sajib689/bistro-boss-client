@@ -3,18 +3,17 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CartCard = ({ item, index, refetch }) => {
-  const {image, name, price } = item;
+  const { image, name, price } = item;
 
-
-  const handleDelete = item => {
+  const handleDelete = (item) => {
     Swal.fire({
-      title: 'Are you sure?',
+      title: "Are you sure?",
       text: "You won't be able to revert this!",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`http://localhost:3000/carts/${item._id}`, {
@@ -22,18 +21,18 @@ const CartCard = ({ item, index, refetch }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            refetch()
-            if(data.acknowledged === true) {
+            if (data.acknowledged === true) {
+              refetch();
               Swal.fire(
-                'Deleted!',
-                'Your product has been deleted.',
-                'success'
-              )
+                "Deleted!",
+                "Your product has been deleted.",
+                "success"
+              );
             }
           });
       }
-    })
-};
+    });
+  };
   return (
     <tr>
       <th>{index + 1}</th>

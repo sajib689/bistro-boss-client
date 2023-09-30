@@ -13,33 +13,52 @@ const SignUp = () => {
   const { registerWithForm, signWithGoogle,updateUserProfile } = useContext(AuthContext);
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
 const navigate = useNavigate()
 
   const onSubmit = (data) => {
-    console.log(data)
     registerWithForm(data.email, data.password)
-    .then((result) => {
+    .then(() => {
       // const user = result.user
       updateUserProfile(data.name, data.photoURL)
       .then(() => {
-          console.log('User updated successfully')
-          
+        const saveUser = {name: data.name, email: data.email}
+         fetch('http://localhost:3000/users',{
+          method: 'POST',	
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(saveUser)
+         })
+         .then(res => res.json())
+         .then(data => {
+          if(data.insertedId) {
+            Swal.fire({
+              position: "top-center",
+              icon: "success",
+              title: "Sign Up Successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+         })
+          reset()
       })
       .catch(error => {
         console.log(error)
       })
-      if (result) {
-        Swal.fire({
-          position: "top-center",
-          icon: "success",
-          title: "Sign Up Successfully",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
+      // if (result) {
+      //   Swal.fire({
+      //     position: "top-center",
+      //     icon: "success",
+      //     title: "Sign Up Successfully",
+      //     showConfirmButton: false,
+      //     timer: 1500,
+      //   });
+      // }
     })
     .catch((error) => {
       if (error) {
