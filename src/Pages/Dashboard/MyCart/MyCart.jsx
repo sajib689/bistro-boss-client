@@ -3,10 +3,11 @@ import useCart from "../../../Hooks/useCart/useCart";
 import CartCard from "../CartCard/CartCard";
 
 const MyCart = () => {
-  const [cart] = useCart();
+  const [cart, refetch] = useCart();
   const total = cart.reduce((sum, item) => item.price + sum, 0);
+  
   return (
-    <div className="mt-20">
+    <div className=" w-full p-10">
       <Helmet>
         <title>Bistro Boss | My Cart</title>
       </Helmet>
@@ -20,7 +21,7 @@ const MyCart = () => {
           {/* head */}
           <thead className="bg-[#D1A054] text-white ">
             <tr className="uppercase">
-                <th>S</th>
+              <th>S</th>
               <th>Item Image</th>
               <th>Item Name</th>
               <th>Price</th>
@@ -29,8 +30,14 @@ const MyCart = () => {
           </thead>
           <tbody>
             {/* row 1 */}
-            {cart.map((item,index) => (
-              <CartCard key={item._id} index={index} item={item}></CartCard>
+            {cart.map((item, index) => (
+              <CartCard
+                // handleDelete={handleDelete}
+                key={item._id}
+                index={index}
+                item={item}
+                refetch={refetch}
+              ></CartCard>
             ))}
           </tbody>
         </table>
