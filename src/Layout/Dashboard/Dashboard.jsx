@@ -4,9 +4,14 @@ import {
   FaWallet,
   FaCalendarAlt,
   FaHome,
+  FaBookMedical,
   FaCommentDots,
+  FaUsers,
+  FaUtensils
 } from "react-icons/fa";
 
+// ToDO
+const isAdmin = true;
 const Dashboard = () => {
   return (
     <div>
@@ -32,44 +37,82 @@ const Dashboard = () => {
             <h1 className="font-bold text-xl">Bistro Boss</h1>
             <p className="font-[600]">Restaurant</p>
           </div>
-          <ul className="menu p-4 w-80 min-h-full ">
+          <ul className="menu p-4 w-80 min-h-full uppercase">
             {/* Sidebar content here */}
-            <li>
-              <NavLink>
-                <FaHome></FaHome>User Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink>
-                <FaCalendarAlt></FaCalendarAlt>Reservations
-              </NavLink>
-            </li>
-            <li>
-              <NavLink>
-                <FaWallet></FaWallet>Payment History
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/dashboard/mycart'>
-                <FaShoppingCart></FaShoppingCart>My Cart
-              </NavLink>
-            </li>
-            <li>
-              <NavLink>
-                <FaCommentDots></FaCommentDots>Add Review
-              </NavLink>
-            </li>
+            {isAdmin ? (
+              <>
+                <li>
+                  <NavLink>
+                    <FaHome to='/dashboard'></FaHome>Admin Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink>
+                    <FaUtensils></FaUtensils>Add items
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink>
+                    <FaWallet></FaWallet>manage items
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink>
+                    <FaShoppingCart></FaShoppingCart>Manage orders
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to='allusers'>
+                    <FaUsers></FaUsers>all users
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink>
+                    <FaHome></FaHome>User Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink>
+                    <FaCalendarAlt></FaCalendarAlt>Reservations
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink>
+                    <FaWallet></FaWallet>Payment History
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/mycart">
+                    <FaShoppingCart></FaShoppingCart>My Cart
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink>
+                    <FaCommentDots></FaCommentDots>Add Review
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink>
+                    <FaBookMedical></FaBookMedical>my booking
+                  </NavLink>
+                </li>
+              </>
+            )}
+
             <div className="divider"></div>
             <li>
-              <NavLink to='/'>
+              <NavLink to="/">
                 <FaHome></FaHome>Home
               </NavLink>
             </li>
             <li>
-              <NavLink to='/menu'>Our Menu</NavLink>
+              <NavLink to="/menu">Our Menu</NavLink>
             </li>
             <li>
-              <NavLink to='/order'>Order Food</NavLink>
+              <NavLink to="/order">Order Food</NavLink>
             </li>
             <li>
               <NavLink></NavLink>
