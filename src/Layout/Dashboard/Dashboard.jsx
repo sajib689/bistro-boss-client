@@ -7,12 +7,15 @@ import {
   FaBookMedical,
   FaCommentDots,
   FaUsers,
-  FaUtensils
+  FaUtensils,
 } from "react-icons/fa";
+import useAdmin from "../../Hooks/useAdmin/useAdmin";
 
 // ToDO
-const isAdmin = true;
+// const isAdmin = true;
+
 const Dashboard = () => {
+  const [isAdmin] = useAdmin();
   return (
     <div>
       <div className="drawer lg:drawer-open ">
@@ -43,7 +46,7 @@ const Dashboard = () => {
               <>
                 <li>
                   <NavLink>
-                    <FaHome to='/dashboard'></FaHome>Admin Home
+                    <FaHome to="/dashboard"></FaHome>Admin Home
                   </NavLink>
                 </li>
                 <li>
@@ -62,7 +65,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to='allusers'>
+                  <NavLink to="allusers">
                     <FaUsers></FaUsers>all users
                   </NavLink>
                 </li>
