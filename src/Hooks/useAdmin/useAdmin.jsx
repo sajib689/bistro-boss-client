@@ -13,6 +13,7 @@ const useAdmin = () => {
                     authorization: `Bearer ${token}`
                 }
             })
+            console.log(res.data)
             return res.data.admin
         }
     })
