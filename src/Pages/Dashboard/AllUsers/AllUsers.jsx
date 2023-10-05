@@ -4,8 +4,13 @@ import { Helmet } from 'react-helmet-async';
 import AllUsersCard from '../AllUsersCard/AllUsersCard';
 
 const AllUsers = () => {
+  const token = localStorage.getItem('token')
    const {data: users = [], refetch} = useQuery(['users'], async () => {
-    const res = await fetch('http://localhost:3000/users')
+    const res = await fetch('http://localhost:3000/users',{
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    })
     return res.json()
    })
     return (
