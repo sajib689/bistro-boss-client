@@ -39,6 +39,7 @@ const AuthProviders = ({children}) => {
                 .then(data => {
                    
                     localStorage.setItem('token', data.data.token)
+                    
                 })
             } else {
                 localStorage.removeItem('token')
