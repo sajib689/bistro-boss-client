@@ -10,12 +10,15 @@ import {
   FaUtensils,
 } from "react-icons/fa";
 import useAdmin from "../../Hooks/useAdmin/useAdmin";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders/AuthProviders";
 
 // ToDO
 // const isAdmin = true;
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
+  const {user} = useContext(AuthContext)
   return (
     <div>
       <div className="drawer lg:drawer-open ">
@@ -39,6 +42,7 @@ const Dashboard = () => {
           <div className="uppercase p-4 ">
             <h1 className="font-bold text-xl">Bistro Boss</h1>
             <p className="font-[600]">Restaurant</p>
+            <p>Email: {user.email}</p>
           </div>
           <ul className="menu p-4 w-80 min-h-full uppercase">
             {/* Sidebar content here */}
