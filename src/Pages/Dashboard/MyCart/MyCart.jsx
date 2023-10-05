@@ -4,8 +4,9 @@ import CartCard from "../CartCard/CartCard";
 
 const MyCart = () => {
   const [cart, refetch] = useCart();
-  const total = cart?.reduce((sum, item) => item.price + sum, 0);
-
+  const total = Array.isArray(cart)
+    ? cart.reduce((sum, item) => item.price + sum, 0)
+    : 0;
   return (
     <div className=" w-full p-10">
       <Helmet>
