@@ -92,7 +92,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/mycart">
+                  <NavLink to="dashboard/mycart">
                     <FaShoppingCart></FaShoppingCart>My Cart
                   </NavLink>
                 </li>
